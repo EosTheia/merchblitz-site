@@ -23,6 +23,11 @@ This directory contains all the creative assets for your MerchBlitz landing page
 │   ├── hover-tiktok.mp4
 │   ├── hover-badges.mp4
 │   └── hover-email.mp4
+├── Social Proof Avatars/
+│   ├── avatar-1.jpg (customer 1)
+│   ├── avatar-2.jpg (customer 2)
+│   ├── avatar-3.jpg (customer 3)
+│   └── ... (add more as needed)
 └── Optional Video Assets/
     ├── creative-ugc-vertical.mp4
     └── creative-explainer.mp4
@@ -155,6 +160,91 @@ When creating your assets:
 - Keep backups of your original assets
 - Test on mobile devices to ensure quality
 - Monitor site performance after adding real assets
+
+## 👤 Social Proof Avatar Management
+
+### **Upload Process:**
+1. **Prepare Images**: 
+   - Size: 72×72px to 200×200px (will be cropped to circle)
+   - Format: JPG or PNG
+   - Quality: Professional headshots work best
+   - Keep under 50KB each
+
+2. **Naming Convention**:
+   ```
+   avatar-1.jpg  → First testimonial (Lina Martinez)
+   avatar-2.jpg  → Second testimonial (Tom Chen) 
+   avatar-3.jpg  → Third testimonial (Maya Singh)
+   ```
+
+3. **Update HTML**: Find the testimonial section and replace:
+   ```html
+   <!-- Change this: -->
+   <div class="quote-avatar">LM</div>
+   
+   <!-- To this: -->
+   <div class="quote-avatar">
+     <img src="/assets/avatars/avatar-1.jpg" alt="Lina Martinez">
+   </div>
+   ```
+
+### **Custom Testimonials**:
+To add your own testimonials, edit the HTML in the `.marquee` section:
+
+```html
+<div class="quote">
+  <div class="quote-text">Your customer's testimonial text here...</div>
+  <div class="quote-author">
+    <div class="quote-avatar">
+      <img src="/assets/avatars/avatar-your-name.jpg" alt="Customer Name">
+    </div>
+    <div class="quote-details">
+      <div class="quote-name">Customer Full Name</div>
+      <div class="quote-company">Their Company Name</div>
+    </div>
+  </div>
+</div>
+```
+
+## 🎨 Sequential Carousel Management
+
+### **Complete Asset Replacement Process:**
+
+1. **Create Your Assets** (in design tools like Figma/Canva):
+   - TikTok: 1080×1920 (9:16 ratio)
+   - PDP Hero: 1920×800 or 1600×800 (2.4:1 ratio)
+   - Instagram: 1080×1080 (1:1 ratio)  
+   - Email: 1200×600 (2:1 ratio)
+
+2. **Upload to `/assets/`** with exact names:
+   ```
+   creative-tiktok-9x16.jpg
+   creative-pdp-hero.jpg
+   creative-ig-square.jpg
+   creative-email-1200x600.jpg
+   ```
+
+3. **Update the items array** in `index.html` (around line 265):
+   ```javascript
+   const items = [
+     {
+       keywords: ["Your", "Custom", "Keywords", "Here"],
+       media: { type: "image", src: "/assets/creative-tiktok-9x16.jpg" },
+       caption: "Your Custom Caption"
+     },
+     // ... repeat for other items
+   ];
+   ```
+
+4. **Customize Keywords & Captions**: 
+   - `keywords`: 4 words that describe the creative
+   - `caption`: Brief description of the asset format
+
+### **Testing Your Assets:**
+1. Upload files to `/assets/`
+2. Open your site locally or on GitHub Pages
+3. Check browser developer tools for any 404 errors
+4. Verify images load smoothly in the carousel
 
 ---
 

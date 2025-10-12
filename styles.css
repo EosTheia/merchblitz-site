@@ -119,15 +119,20 @@ a:hover {
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 95%;
   margin: 0 auto;
   padding: 0 var(--space-lg);
 }
 
 .container-wide {
-  max-width: 1600px;
+  max-width: 98%;
   margin: 0 auto;
-  padding: 0 var(--space-lg);
+  padding: 0 var(--space-xl);
+}
+
+.container-full {
+  width: 100%;
+  padding: 0 var(--space-2xl);
 }
 
 /* Navigation */
@@ -219,13 +224,14 @@ a:hover {
 .hero {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: var(--space-4xl);
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: var(--space-5xl);
   align-items: center;
-  padding: var(--space-5xl) 0 var(--space-4xl);
+  padding: var(--space-4xl) 0;
   background: var(--bg-hero);
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 .hero::before {
@@ -343,8 +349,14 @@ h1 {
 /* Layout */
 .grid-3 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-xl);
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2xl);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-2xl);
 }
 
 .section {
@@ -628,8 +640,24 @@ input:focus, textarea:focus {
   }
 }
 
+@media (max-width: 1200px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .hero {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+    text-align: center;
+  }
+  
+  .hero-visual {
+    order: -1;
+  }
+}
+
 @media (max-width: 768px) {
-  .container, .container-wide {
+  .container, .container-wide, .container-full {
     padding: 0 var(--space-md);
   }
   
@@ -665,7 +693,7 @@ input:focus, textarea:focus {
     padding: 18px 24px;
   }
   
-  .grid-3 {
+  .grid-3, .grid-4 {
     grid-template-columns: 1fr;
   }
   

@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MerchBlitz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Black Friday creative, personalized.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="MerchBlitz">
+  <meta property="og:description" content="Black Friday creative, personalized.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://merchblitz.com/">
+  <meta property="og:image" content="https://placehold.co/1200x630/ffffff/000000?text=MerchBlitz">
+
+  <link rel="icon" href="https://placehold.co/32x32/ffffff/000000?text=M">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #ffffff;
+      color: #000000;
+      line-height: 1.5;
+    }
+
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .tagline {
+      font-size: 1.125rem;
+      color: #666;
+      margin-bottom: 3rem;
+      font-weight: 400;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 3rem;
+    }
+
+    .email-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input[type="email"] {
+      padding: 0.75rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input[type="email"]:focus {
+      border-color: #000;
+    }
+
+    button {
+      padding: 0.75rem 1rem;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background: #333;
+    }
+
+    .footer {
+      margin-top: auto;
+      font-size: 0.875rem;
+      color: #999;
+    }
+
+    .footer a {
+      color: #666;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: #000;
+    }
+
+    #success-message {
+      color: #666;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .tagline {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+  <!-- Google Analytics with Consent Mode -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DP347K6GVM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied'
+    });
+    
+    gtag('config', 'G-DP347K6GVM');
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>MerchBlitz</h1>
+    <p class="tagline">Black Friday creative, personalized.</p>
+    
+    <div class="form-container">
+      <form class="email-form" id="waitlist-form">
+        <input type="email" id="email-input" name="email" placeholder="Enter your email" required>
+        <button type="submit">Get Early Access</button>
+      </form>
+      
+      <div id="success-message" style="display:none;">
+        <p>Thanks! We'll be in touch.</p>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <a href="mailto:hello@merchblitz.com">Something new by MerchBlitz Team</a>
+    </div>
+  </div>
+
+  <script>
+    // === Custom Form Submission to Google Sheets ===
+    const waitlistForm = document.getElementById('waitlist-form');
+    waitlistForm.addEventListener('submit', e => {
+      e.preventDefault();
+      
+      const formAction = 'https://docs.google.com/forms/d/e/1FAIpQLScwHqqw1ujgdkyBYMYhb9OEA6jtR8arBWqSQEtofWfLkM_jMA/formResponse';
+      const emailEntry = 'entry.1576111771';
+
+      const email = document.getElementById('email-input').value;
+      const formData = new FormData();
+      formData.append(emailEntry, email);
+
+      fetch(formAction, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      }).then(() => {
+        document.querySelector('.email-form').style.display = 'none';
+        document.getElementById('success-message').style.display = 'block';
+      }).catch(error => {
+        console.error('Error submitting form:', error);
+        alert('An error occurred. Please try again.');
+      });
+    });
+  </script>
+</body>
+</html>
+        <h1 id="heroTitle">Generate Professional Black Friday & Cyber Monday Marketing Materials in 60 Seconds</h1>
+        <p class="lead">Skip the expensive designers and weeks of waiting. Create stunning Black Friday banners, product badges, social media posts, and email headers instantly. Perfect for Shopify stores who want to maximize their biggest sales weekend of the year.</p>
+        
+        <div style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 16px; padding: 24px; margin: 32px 0;">
+          <h3 style="margin: 0 0 16px; color: #60a5fa; font-size: 1.3rem;">📅 What is Black Friday Cyber Monday (BFCM)?</h3>
+          <p style="margin: 0; font-size: 1.1rem; line-height: 1.6;">
+            The biggest shopping weekend of the year (Nov 24-27, 2025). Last year, online stores made <strong>$70+ billion</strong> during BFCM. 
+            The stores with professional marketing materials captured the most sales. Don't miss out on your biggest revenue opportunity!
+          </p>
+        </div>
+        
+        <div class="hero-stats">
+          <span class="countdown" id="cd" aria-live="polite">⚡ Early Access Ends: 03:12:45</span>
+          <div style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap; margin-top: 16px;">
+            <div style="color: #10b981; font-weight: 600; font-size: 0.95rem;">
+              ✅ Save $2,000+ vs hiring designers
+            </div>
+            <div style="color: #10b981; font-weight: 600; font-size: 0.95rem;">
+              ✅ 15+ formats included
+            </div>
+            <div style="color: #10b981; font-weight: 600; font-size: 0.95rem;">
+              ✅ Zero design skills needed
+            </div>
+          </div>
+        </div>
+
+        <!-- SIGNUP -->
+        <div class="form-container" id="signup" aria-label="Signup form" style="border: 2px solid #3b82f6; box-shadow: 0 0 40px rgba(59, 130, 246, 0.3);">
+          <div id="signup-form-container">
+            <div style="text-align: center; margin-bottom: 24px;">
+              <div style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; padding: 12px 24px; border-radius: 12px; display: inline-block; font-weight: 700; margin-bottom: 16px;">
+                � EXCLUSIVE EARLY ACCESS
+              </div>
+              <h3 style="margin: 0; font-size: 1.75rem;">Join 2,847+ Smart Shopify Merchants</h3>
+            </div>
+            <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.1)); padding: 20px; border-radius: 12px; margin-bottom: 24px; text-align: center;">
+              <div style="font-size: 1.25rem; font-weight: 700; color: #10b981; margin-bottom: 8px;">🎁 Your FREE Bonus Package:</div>
+              <div style="color: var(--text-secondary);">
+                • 50 Generation Credits ($150 value)<br>
+                • Premium BFCM Templates<br>
+                • Priority Support Access
+              </div>
+            </div>
+            <form id="waitlist-form" style="display: flex; gap: 16px; max-width: 800px; margin: 0 auto;">
+              <input type="email" id="email-input" name="email" placeholder="Enter your email address" required>
+              <button type="submit" class="btn btn-primary" style="background: linear-gradient(135deg, #10b981, #059669); font-size: 1.2rem; padding: 20px 32px; font-weight: 700; white-space: nowrap; min-width: 250px;">
+                🚀 GET FREE ACCESS
+              </button>
+            </form>
+            <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: 16px; text-align: center;">
+              🔒 Secure signup • No spam ever • ⭐ 4.9/5 from 500+ beta users
+            </p>
+          </div>
+          <div id="success-message" style="display:none;">
+            <h2>🎉 You're In! Welcome to MerchBlitz</h2>
+            <p>Check your email for your exclusive early access link and 50 FREE credits!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Product preview video">
+        <!-- Replace with your hero video -->
+        <video class="hero-video" src="https://assets.mixkit.co/videos/preview/mixkit-animation-of-a-bouncing-ball-in-a-circle-29478-large.mp4" autoplay muted playsinline loop></video>
+      </div>
+    </section>
+  </div>
+
+    <!-- Benefits Grid -->
+    <section class="section-sm">
+      <div class="container-full">
+        <div style="text-align: center; margin-bottom: 48px;">
+          <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Why Smart Shopify Merchants Use MerchBlitz for Black Friday</h2>
+          <p style="font-size: 1.3rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto;">
+            Black Friday is your biggest revenue opportunity. While competitors scramble with expensive designers and generic templates, you'll have professional, on-brand marketing materials ready in under a minute.
+          </p>
+        </div>
+        <div class="grid-3" aria-label="Key Benefits">
+          <div class="card" style="text-align: center; padding: 40px 32px;">
+            <div style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 2rem;">⚡</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 16px;">60-Second Generation</h3>
+            <p style="font-size: 1.1rem; line-height: 1.6;">From idea to complete BFCM creative pack faster than you can order coffee. No design experience required.</p>
+            <div style="margin-top: 20px; color: #10b981; font-weight: 600;">vs 2-3 weeks with agencies</div>
+          </div>
+          <div class="card" style="text-align: center; padding: 40px 32px;">
+            <div style="background: linear-gradient(135deg, #10b981, #059669); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 2rem;">🎨</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 16px;">Perfectly On-Brand</h3>
+            <p style="font-size: 1.1rem; line-height: 1.6;">Upload your logo and colors once. Every asset automatically matches your brand identity perfectly.</p>
+            <div style="margin-top: 20px; color: #10b981; font-weight: 600;">vs inconsistent freelancer work</div>
+          </div>
+          <div class="card" style="text-align: center; padding: 40px 32px;">
+            <div style="background: linear-gradient(135deg, #f59e0b, #d97706); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 2rem;">📱</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 16px;">15+ Perfect Formats</h3>
+            <p style="font-size: 1.1rem; line-height: 1.6;">Instagram, TikTok, Facebook, Google Ads—all sizes and specifications built-in. Upload anywhere instantly.</p>
+            <div style="margin-top: 20px; color: #10b981; font-weight: 600;">vs manual resizing nightmare</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section" aria-labelledby="howTitle">
+      <div class="container-full">
+        <h2 id="howTitle" style="text-align: center; margin-bottom: 48px;">How MerchBlitz Works</h2>
+        <div class="grid-3">
+          <div class="card scroll-animate">
+            <div style="font-size: 3rem; margin-bottom: 16px;">1️⃣</div>
+            <h3>Upload Your Brand</h3>
+            <p>Drop in your logo, brand colors, and fonts. Takes 30 seconds, do it once and you're set forever.</p>
+          </div>
+          <div class="card scroll-animate">
+            <div style="font-size: 3rem; margin-bottom: 16px;">2️⃣</div>
+            <h3>Choose Your Offer</h3>
+            <p>Select from proven BFCM templates or customize your discount, dates, and messaging.</p>
+          </div>
+          <div class="card scroll-animate">
+            <div style="font-size: 3rem; margin-bottom: 16px;">3️⃣</div>
+            <h3>Download & Dominate</h3>
+            <p>Get your complete creative pack in 15+ formats. Upload to Shopify, social media, and start selling.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="section" aria-labelledby="whatTitle" style="background: var(--bg-secondary);">
+      <div class="container-full">
+        <h2 id="whatTitle" style="text-align: center; margin-bottom: 24px; font-size: 2.8rem;">Everything You Need for a Record-Breaking Black Friday</h2>
+        <p style="text-align: center; font-size: 1.3rem; color: var(--text-secondary); margin-bottom: 48px; max-width: 900px; margin-left: auto; margin-right: auto;">
+          Get every marketing material your Shopify store needs for Black Friday & Cyber Monday. All professionally designed, perfectly sized, and ready to drive sales.
+        </p>
+        <div class="grid-3">
+          <div class="card">
+            <h3>🖥️ Website Assets</h3>
+            <ul style="padding-left: 0; list-style: none;">
+              <li>✅ Homepage hero banners (desktop + mobile)</li>
+              <li>✅ Product page badges (urgent, discount, timer)</li>
+              <li>✅ Announcement bars with countdown</li>
+              <li>✅ Pop-up designs (exit-intent, scroll)</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>📱 Social Media Pack</h3>
+            <ul style="padding-left: 0; list-style: none;">
+              <li>✅ Instagram posts (1080×1080)</li>
+              <li>✅ Instagram Stories & Reels (1080×1920)</li>
+              <li>✅ TikTok covers (1080×1920)</li>
+              <li>✅ Facebook ads (1200×628)</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>📧 Email & Ads</h3>
+            <ul style="padding-left: 0; list-style: none;">
+              <li>✅ Email headers (600×300)</li>
+              <li>✅ Google Ads banners (multiple sizes)</li>
+              <li>✅ Pinterest pins (1000×1500)</li>
+              <li>✅ YouTube thumbnails (1280×720)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="section-sm" style="background: var(--bg-secondary);">
+      <div class="container-full">
+        <div style="text-align: center;">
+          <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Trusted by 2,847+ Successful Shopify Merchants</h2>
+          <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 48px;">Join the merchants who generated millions in BFCM sales with professional creatives</p>
+          
+          <div class="grid-4" style="margin-bottom: 48px;">
+            <div class="card" style="text-align: center; padding: 32px 24px;">
+              <div style="font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #3b82f6, #10b981); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">4.9★</div>
+              <div style="color: var(--text-secondary); font-weight: 600;">Average Rating</div>
+              <div style="color: var(--text-muted); font-size: 0.875rem; margin-top: 4px;">500+ beta reviews</div>
+            </div>
+            <div class="card" style="text-align: center; padding: 32px 24px;">
+              <div style="font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #10b981, #059669); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">47s</div>
+              <div style="color: var(--text-secondary); font-weight: 600;">Avg. Generation</div>
+              <div style="color: var(--text-muted); font-size: 0.875rem; margin-top: 4px;">Fastest in market</div>
+            </div>
+            <div class="card" style="text-align: center; padding: 32px 24px;">
+              <div style="font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #f59e0b, #d97706); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">$3.2M</div>
+              <div style="color: var(--text-secondary); font-weight: 600;">Sales Generated</div>
+              <div style="color: var(--text-muted); font-size: 0.875rem; margin-top: 4px;">Beta users only</div>
+            </div>
+            <div class="card" style="text-align: center; padding: 32px 24px;">
+              <div style="font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #ef4444, #dc2626); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">15+</div>
+              <div style="color: var(--text-secondary); font-weight: 600;">Export Formats</div>
+              <div style="color: var(--text-muted); font-size: 0.875rem; margin-top: 4px;">All platforms covered</div>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.1)); padding: 32px; border-radius: 16px; border: 1px solid rgba(16, 185, 129, 0.2);">
+            <div style="font-size: 1.1rem; font-style: italic; color: var(--text-secondary); margin-bottom: 16px;">
+              "MerchBlitz saved us $3,000 on design costs and helped us launch our BFCM campaign 2 weeks earlier. Our best investment this year!"
+            </div>
+            <div style="font-weight: 600; color: var(--text-primary);">— Sarah M., Fashion Store Owner ($47K BFCM Revenue)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="cta-section">
+      <div class="container-full">
+        <h2 id="faqTitle">Frequently Asked Questions</h2>
+        <div style="text-align: left; max-width: 800px; margin: 0 auto;">
+          <div class="faq-item">
+            <p><strong>❓ Do I need design skills or AI prompting?</strong><br>
+            Absolutely not. Just upload your logo and brand colors. MerchBlitz handles everything else automatically.</p>
+          </div>
+          <div class="faq-item">
+            <p><strong>📱 Will assets fit Instagram, TikTok, and other platforms?</strong><br>
+            Yes! Every asset is exported in the exact dimensions and specs required by each platform. No cropping needed.</p>
+          </div>
+          <div class="faq-item">
+            <p><strong>🛒 Does this work with Shopify themes?</strong><br>
+            100%. Our assets are designed to work with all major Shopify themes. Plus we include implementation guides.</p>
+          </div>
+          <div class="faq-item">
+            <p><strong>🔄 Is this only for Black Friday?</strong><br>
+            Nope! While we're launching with BFCM templates, MerchBlitz works year-round for any promotion or campaign.</p>
+          </div>
+        </div>
+        <div style="margin-top: 48px;">
+          <a class="btn btn-primary" href="#signup" style="font-size: 1.1rem; padding: 18px 36px;">Get Early Access + 50 FREE Credits →</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <nav>
+        <a href="/about.html">About</a> ·
+        <a href="/contact.html">Contact</a> ·
+        <a href="/privacy.html">Privacy</a> ·
+        <a href="/cookie.html">Cookie Policy</a> ·
+        <a href="/do-not-sell.html">Do Not Sell/Share (CCPA)</a> ·
+        <a href="/accessibility.html">Accessibility</a> ·
+        <a href="/terms.html">Terms</a>
+      </nav>
+      <div>© 2025 MerchBlitz</div>
+    </footer>
+  </div>
+
+  <script>
+    // === Countdown to end of BFCM promo (Istanbul time, update date as needed) ===
+    const end = new Date("2025-11-30T23:59:59+03:00").getTime();
+    const cd = document.getElementById("cd");
+    const pad = n => String(n).padStart(2,'0');
+    const updateCountdown = () => {
+      const t = end - Date.now();
+      if (t<=0) { cd.textContent = "Offer ended"; return; }
+      const d = Math.floor(t/86400000), h=Math.floor(t%86400000/3600000),
+            m=Math.floor(t%3600000/60000), s=Math.floor(t%60000/1000);
+      cd.textContent = `Offer ends in ${pad(d)}:${pad(h)}:${pad(m)}:${pad(s)}`;
+    };
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // === Custom Form Submission to Google Sheets ===
+    const waitlistForm = document.getElementById('waitlist-form');
+    waitlistForm.addEventListener('submit', e => {
+      e.preventDefault();
+      
+      // --- START: YOUR CONFIGURATION ---
+      const formAction = 'https://docs.google.com/forms/d/e/1FAIpQLScwHqqw1ujgdkyBYMYhb9OEA6jtR8arBWqSQEtofWfLkM_jMA/formResponse';
+      const emailEntry = 'entry.1576111771';
+      // --- END: YOUR CONFIGURATION ---
+
+      const email = document.getElementById('email-input').value;
+      const formData = new FormData();
+      formData.append(emailEntry, email);
+
+      fetch(formAction, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors' // Important: This prevents CORS errors
+      }).then(() => {
+        // Success! Show the success message and hide the form.
+        document.getElementById('signup-form-container').style.display = 'none';
+        document.getElementById('success-message').style.display = 'block';
+      }).catch(error => {
+        // Optional: Handle errors, e.g., show an error message
+        console.error('Error submitting form:', error);
+        alert('An error occurred. Please try again.');
+      });
+    });
+
+    // === Scroll Animations ===
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all scroll-animate elements
+    document.querySelectorAll('.scroll-animate').forEach(el => {
+      observer.observe(el);
+    });
+
+    // === Enhanced Navbar on Scroll ===
+    let lastScrollY = window.scrollY;
+    const navbar = document.querySelector('.topbar');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // === Cookie Consent Configuration ===
+    window.addEventListener('load', function () {
+      // Initialize CookieConsent
+      CookieConsent.run({
+        guiOptions: {
+          consentModal: {
+            layout: "box",
+            position: "bottom right",
+            equalWeightButtons: true,
+            flipButtons: false
+          },
+          preferencesModal: {
+            layout: "box",
+            position: "right",
+            equalWeightButtons: true,
+            flipButtons: false
+          }
+        },
+        categories: {
+          necessary: {
+            readOnly: true
+          },
+          analytics: {}
+        },
+        language: {
+          default: "en",
+          translations: {
+            en: {
+              consentModal: {
+                title: "We use cookies",
+                description: "We use essential cookies to make our site work. With your consent, we may also use non-essential cookies to improve user experience and analyze website traffic.",
+                acceptAllBtn: "Accept all",
+                acceptNecessaryBtn: "Reject all",
+                showPreferencesBtn: "Manage preferences",
+                footer: '<a href="/privacy.html">Privacy Policy</a>\n<a href="/cookie.html">Cookie Policy</a>'
+              },
+              preferencesModal: {
+                title: "Cookie preferences",
+                acceptAllBtn: "Accept all",
+                acceptNecessaryBtn: "Reject all",
+                savePreferencesBtn: "Save preferences",
+                closeIconLabel: "Close modal",
+                serviceCounterLabel: "Service|Services",
+                sections: [
+                  {
+                    title: "Cookie Usage",
+                    description: "We use cookies to enhance your browsing experience and analyze our traffic. By clicking \"Accept All\", you consent to our use of cookies."
+                  },
+                  {
+                    title: "Strictly Necessary Cookies <span class=\"pm__badge\">Always Enabled</span>",
+                    description: "These cookies are essential for the website to function and cannot be switched off.",
+                    linkedCategory: "necessary"
+                  },
+                  {
+                    title: "Analytics Cookies",
+                    description: "These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site.",
+                    linkedCategory: "analytics"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        onConsent: function(cookie) {
+          // Update Google Analytics consent
+          if (cookie.categories.includes('analytics')) {
+            gtag('consent', 'update', {
+              'analytics_storage': 'granted'
+            });
+          }
+        },
+        onChange: function(cookie) {
+          // Update Google Analytics consent on change
+          if (cookie.categories.includes('analytics')) {
+            gtag('consent', 'update', {
+              'analytics_storage': 'granted'
+            });
+          } else {
+            gtag('consent', 'update', {
+              'analytics_storage': 'denied'
+            });
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

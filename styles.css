@@ -627,52 +627,77 @@ input:focus, textarea:focus {
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .hero {
     grid-template-columns: 1fr;
     gap: var(--space-3xl);
     text-align: center;
-    padding: var(--space-4xl) 0;
+    padding-top: var(--space-5xl);
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
   }
   
   .hero-visual {
     order: -1;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .lead {
+    max-width: 100%;
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 992px) {
   .grid-4 {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-  .hero {
+
+  .grid-3 {
     grid-template-columns: 1fr;
-    gap: var(--space-3xl);
-    text-align: center;
   }
-  
-  .hero-visual {
-    order: -1;
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
 @media (max-width: 768px) {
   .container, .container-wide, .container-full {
-    padding: 0 var(--space-md);
+    padding: 0 var(--space-lg);
   }
   
   .nav {
     padding: var(--space-md) 0;
-    flex-wrap: wrap;
+  }
+
+  .nav-brand {
+    font-size: 1.3rem;
   }
   
   .badge {
-    font-size: 0.75rem;
-    padding: var(--space-xs) var(--space-sm);
+    font-size: 0.8rem;
+    padding: var(--space-sm) var(--space-md);
+    text-align: center;
+    width: 100%;
+    order: 1;
   }
   
   .hero {
-    padding: var(--space-3xl) 0 var(--space-2xl);
+    padding: var(--space-4xl) 0 var(--space-3xl);
+    min-height: auto;
+  }
+
+  h1, .hero h1 {
+    font-size: clamp(2.2rem, 10vw, 3rem);
+  }
+
+  .lead {
+    font-size: 1.1rem;
   }
   
   #waitlist-form {
@@ -684,6 +709,7 @@ input:focus, textarea:focus {
     width: 100%;
     min-height: 56px;
     font-size: 1.1rem;
+    padding: 18px;
   }
   
   #waitlist-form button {
@@ -691,6 +717,7 @@ input:focus, textarea:focus {
     justify-content: center;
     min-width: auto;
     padding: 18px 24px;
+    font-size: 1.1rem;
   }
   
   .grid-3, .grid-4 {
@@ -699,16 +726,47 @@ input:focus, textarea:focus {
   
   .hero-stats {
     justify-content: center;
+    gap: var(--space-md);
+  }
+
+  .countdown {
+    width: 100%;
+    text-align: center;
+  }
+
+  .section {
+    padding: var(--space-4xl) 0;
+  }
+
+  .section-sm {
+    padding: var(--space-3xl) 0;
+  }
+
+  h2 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+
+  .footer nav a {
+    display: block;
+    margin: var(--space-md) 0;
   }
 }
 
 @media (max-width: 480px) {
+  .container, .container-wide, .container-full {
+    padding: 0 var(--space-md);
+  }
+
+  .topbar .btn {
+    display: none; /* Hide topbar button on very small screens */
+  }
+
   .form-container {
-    padding: var(--space-xl);
+    padding: var(--space-lg);
   }
   
   .cta-section {
-    padding: var(--space-2xl);
+    padding: var(--space-xl);
   }
 }
 
